@@ -1,94 +1,71 @@
 # Chamado System
 
-Sistema de Chamados (Ticketing System) desenvolvido como projeto de estudo e portfólio, com foco em boas práticas de engenharia de software, modelagem UML e arquitetura back-end.
+Sistema de Chamados (Ticketing System) desenvolvido como projeto de portfólio,
+com foco em boas práticas de arquitetura, modelagem e uso do ecossistema Spring.
 
-## 📌 Objetivo do Projeto
+## 🎯 Objetivo do Projeto
+Permitir que usuários abram chamados, técnicos façam o atendimento
+e administradores gerenciem usuários e chamados.
 
-O objetivo deste projeto é construir um sistema de gerenciamento de chamados semelhante aos utilizados em ambientes corporativos de suporte técnico, permitindo a interação entre usuários, técnicos e administradores.
-
-Atualmente, o repositório contém a **fase de análise e design**, que antecede a implementação do sistema.
-
----
-
-## 🧠 Análise e Design
-
-Antes da implementação, foi realizada a modelagem UML para definir claramente o escopo do sistema, seus atores, responsabilidades e modelo de dados.
-
-Todos os artefatos desta fase estão organizados na pasta:
-
+O projeto será desenvolvido **por etapas**, iniciando pela análise e design,
+seguindo para implementação back-end, front-end e deploy com Docker.
 
 ---
 
-### 🔹 Diagrama de Casos de Uso
-
-O Diagrama de Casos de Uso descreve as ações disponíveis para cada ator do sistema:
-
-- **Cliente**
-  - Criar chamado
-  - Consultar seus chamados
-  - Fazer comentários
-
-- **Técnico**
-  - Consultar chamados atribuídos
-  - Alterar status do chamado
-  - Fazer comentários
-
-- **Administrador**
-  - Criar e excluir usuários
-  - Atribuir técnicos aos chamados
-  - Consultar todos os chamados
-
-📄 Arquivo:  
-`Analise e design/diagrama-casos-de-uso.pdf`
+## 👥 Atores do Sistema
+- **Cliente**: abre chamados, acompanha status e adiciona comentários
+- **Técnico**: atende chamados atribuídos e altera status
+- **Admin**: gerencia usuários, técnicos e chamados
 
 ---
 
-### 🔹 Diagrama de Classes
-
-O Diagrama de Classes define as entidades do sistema, seus atributos, relacionamentos e enums utilizados no domínio da aplicação.
-
-Principais entidades modeladas:
-- **Usuário**
-- **Chamado**
-- **Comentário**
-
-Enums:
-- **Role**: CLIENTE, TECNICO, ADMIN
-- **Status**: PENDENTE, EM_ANDAMENTO, FINALIZADO
-
-📄 Arquivo:  
-`Analise e design/diagrama-classes.pdf`
+## 🧩 Funcionalidades Planejadas
+- Abertura de chamados
+- Alteração de status (PENDENTE → EM_ANDAMENTO → FINALIZADO)
+- Comentários internos por chamado
+- Gerenciamento de usuários (Admin)
+- Atribuição de técnico a chamado
+- Autenticação e autorização por perfil
 
 ---
 
-## 🛠️ Tecnologias Planejadas
-
-- Java 17
-- Spring Boot
-- Spring Data JPA
-- MySQL
-- HTML, CSS e JavaScript puro
-- Docker
-- Git e GitHub
+## 🏗️ Arquitetura
+- Back-end: **Java + Spring Boot (API REST)**
+- Front-end: **HTML, CSS e JavaScript puro**
+- Banco de Dados: **MySQL**
+- Containerização: **Docker**
+- Padrão arquitetural: **MVC + Camadas (Controller, Service, Repository)**
 
 ---
 
-## 🚧 Status do Projeto
+## 📐 Análise e Design
+Os diagramas UML foram criados antes da implementação, seguindo boas práticas
+de engenharia de software.
 
-🔄 **Em desenvolvimento**
+📁 **Pasta:** `Analise e design/`
 
-O projeto encontra-se atualmente na fase de **análise e design**.  
-As próximas etapas incluem:
-
-- Criação do projeto Spring Boot
-- Implementação das entidades JPA
-- Configuração do banco de dados MySQL
-- Desenvolvimento do back-end REST
-- Criação do front-end
-- Containerização com Docker
+- Diagrama de Casos de Uso
+- Diagrama de Classes
+- Arquivo do Astah (.asta)
 
 ---
 
-## 📚 Observações
+## 📂 Estrutura do Projeto
 
-Este projeto está sendo desenvolvido com foco em aprendizado prático, seguindo uma abordagem incremental, documentada e alinhada às boas práticas de mercado.
+```text
+chamado-system/
+│
+├── Analise e design/
+│   ├── diagrama-casos-de-uso.pdf
+│   ├── diagrama-classes.pdf
+│   └── chamado-system - Analise e Design.asta
+│
+└── backend/
+    └── chamado-system/
+        ├── src/main/java/com/chamadosystem/
+        │   ├── controller
+        │   ├── entity
+        │   ├── enums
+        │   ├── repository
+        │   └── service
+        └── pom.xml
